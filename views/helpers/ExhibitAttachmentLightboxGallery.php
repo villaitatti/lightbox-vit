@@ -31,7 +31,7 @@ class LightboxGallery_View_Helper_ExhibitAttachmentLightboxGallery extends Zend_
             $item = $attachment->getItem();
             //print_r($item);
             $html .= '<div class="lb-metadata-container" id="image-metadata-container-'. $numItem .'" style="display:none;">';
-            $html .= '<h2 style="font-weight:bold;">';
+            $html .= '<h2 style="font-weight:bold;margin-bottom:2rem;">';
             $title = metadata($item, array('Dublin Core', 'Title'));
             $html .= $title;
             $html .= '</h2>';
