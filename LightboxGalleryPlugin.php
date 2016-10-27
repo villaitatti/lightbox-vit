@@ -17,7 +17,7 @@ class LightboxGalleryPlugin extends Omeka_Plugin_AbstractPlugin
 		if(array_key_exists('lightbox-gallery', $args['layouts'])
             || array_key_exists('lightbox-file-text', $args['layouts'])
             || array_key_exists('lightbox-book', $args['layouts'])) {
-			queue_js_file('lightbox.min', 'javascripts/lightbox');
+			queue_js_file('lightbox/lightbox');
 			queue_css_file('lightbox');
 		}
 	}

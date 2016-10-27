@@ -24,7 +24,19 @@
     
     // Change to localize to non-english language
     LightboxOptions.prototype.albumLabel = function(curImageNum, albumSize) {
-      return "Image " + curImageNum + " of " + albumSize;
+        
+        var lbPrevImage = curImageNum -1;
+        this.$lbPrevMetadata = $("#image-metadata-container-" + lbPrevImage);
+        this.$lbPrevMetadata.hide();
+        var lbNextImage = curImageNum +1;
+        this.$lbNextMetadata = $("#image-metadata-container-" + lbNextImage);
+        this.$lbNextMetadata.hide();
+        this.$imageTitle = $("#image-metadata-container-" + curImageNum);
+        this.$imageTitle.appendTo("#lb-image-title");
+        this.$imageTitle.show();
+        return "Image " + curImageNum + " of " + albumSize;
+      
+        
     };
 
     return LightboxOptions;
@@ -58,8 +70,9 @@
     // Attach event handlers to the new DOM elements. click click click
     Lightbox.prototype.build = function() {
       var self = this;
-      $("<div id='lightboxOverlay' class='lightboxOverlay'></div><div id='lightbox' class='lightbox'><div class='lb-outerContainer'><div class='lb-container'><img class='lb-image' src='' /><div class='lb-nav'><a class='lb-prev' href='' ></a><a class='lb-next' href='' ></a></div><div class='lb-loader'><a class='lb-cancel'></a></div></div></div><div class='lb-dataContainer'><div class='lb-data'><div class='lb-details'><span class='lb-caption'></span><span class='lb-number'></span></div><div class='lb-closeContainer'><a class='lb-close'></a></div></div></div></div>").appendTo($('body'));
+      $("<div id='lightboxOverlay' class='lightboxOverlay'></div><div id='lightbox' class='lightbox'><div class='lb-outerContainer'><div class='lb-container'><img class='lb-image' src='' /><div id='lb-image-title'></div><div class='lb-nav'><a class='lb-prev' href='' ></a><a class='lb-next' href='' ></a></div><div class='lb-loader'><a class='lb-cancel'></a></div></div></div><div class='lb-dataContainer'><div class='lb-data'><div class='lb-details'><span class='lb-caption'></span><span class='lb-number'></span></div><div class='lb-closeContainer'><a class='lb-close'></a></div></div></div></div>").appendTo($('body'));
       
+        
       // Cache jQuery objects
       this.$lightbox       = $('#lightbox');
       this.$overlay        = $('#lightboxOverlay');
@@ -407,5 +420,7 @@
     var options  = new LightboxOptions();
     var lightbox = new Lightbox(options);
   });
-
+    
 }).call(this);
+
+
