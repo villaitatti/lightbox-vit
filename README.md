@@ -1,4 +1,4 @@
-LightboxGallery
+VIT LightboxGallery - A VIT fork, adding metadata to the display of gallery items
 ===============
 
 The **Lightbox Gallery** plugin adds three new layouts to Exhibit Builder. The first two are based on the default _Gallery_ and _File with Text_ layouts that ship with [Exhibit Builder](https://github.com/omeka/plugin-ExhibitBuilder). (One layout displays attached files in a gallery format, while the other allows you to choose a size for a single image and align it left or right.) Files displayed using these layouts link to a Lightbox overlay of a larger version of the image. The third layout, _Lightbox Book_, displays only the first image on the exhibit page but allows users to "page" through the rest of the images once they open Lightbox. Captions display underneath the large images in Lightbox, rather than underneath the thumbnail images.
