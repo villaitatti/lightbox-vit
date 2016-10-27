@@ -15,13 +15,12 @@ $galleryPosition = isset($options['gallery-position'])
     ?>
 </div>
 <?php endif; ?>
-<div class="lightbox-gallery <?php if ($showcaseFile || !empty($text)) echo "with-showcase $galleryPosition"; ?>items">
+<div class="lightbox-gallery <?php if ($showcaseFile || !empty($text)) echo "with-showcase $galleryPosition"; ?>">
     <?php 
     	echo $this->exhibitAttachmentLightboxGallery($attachments); 
     ?>
 </div>
 <?php echo $text; ?>
-
 <script type="text/javascript">
     $(function () {
         $(".thumb").addClass("pic");
