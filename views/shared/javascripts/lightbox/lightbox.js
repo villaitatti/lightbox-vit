@@ -25,15 +25,20 @@
     // Change to localize to non-english language
     LightboxOptions.prototype.albumLabel = function(curImageNum, albumSize) {
         
-        var lbPrevImage = curImageNum -1;
-        this.$lbPrevMetadata = $("#image-metadata-container-" + lbPrevImage);
-        this.$lbPrevMetadata.hide();
-        var lbNextImage = curImageNum +1;
-        this.$lbNextMetadata = $("#image-metadata-container-" + lbNextImage);
-        this.$lbNextMetadata.hide();
+        // AC: I clear everything that is inside #lb-image-title which is only in the modal lightbox
+        this.$lbImageTitle = $("#lb-image-title");
+        this.$lbImageTitle.empty();
+        /* AC: I get the id of the current image and append it, so that I get the id of div containing all the metadata.
+        Remeber this div is in the exhibit page, not the modal window*/
         this.$imageTitle = $("#image-metadata-container-" + curImageNum);
-        this.$imageTitle.appendTo("#lb-image-title");
-        this.$imageTitle.show();
+        // AC: I copy the content in the exhibit page and I append it to modal.
+        // IMPORTANT: clone will copy the content, without clone, the content will be moved, which is not what I want.
+        this.$imageTitle.clone().appendTo("#lb-image-title");
+        /* AC: I need to show this content, because is currently hidden, but I need to show only the div that is in the modal window
+        not the one that is in the exhibit page, so I use a CSS selector */
+        this.$imageTitleInsideLb = $(" #lb-image-title > #image-metadata-container-" + curImageNum);
+        // Show will change the display from none to block.
+        this.$imageTitleInsideLb.show();
         return "Image " + curImageNum + " of " + albumSize;
       
         

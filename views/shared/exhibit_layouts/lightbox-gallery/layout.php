@@ -32,8 +32,3 @@ $galleryPosition = isset($options['gallery-position'])
         $(".layout-lightbox-gallery").addClass("tiles");
 }   )
 </script>
-<script type="text/javascript">
-    $(function () {
-        $(".tiles").tilesGallery();
-    })
-</script>

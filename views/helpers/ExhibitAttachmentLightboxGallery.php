@@ -26,7 +26,7 @@ class LightboxGallery_View_Helper_ExhibitAttachmentLightboxGallery extends Zend_
 		$html = '';
         $numItem = 1;
 		foreach ($attachments as $attachment) {
-			$html .= '<div class="exhibit-item exhibit-gallery-item item">';
+			$html .= '<div class="exhibit-item exhibit-gallery-item">';
 			$html .= $this->view->exhibitAttachmentLightbox($attachment, $fileOptions, $linkProps);
             $item = $attachment->getItem();
             //print_r($item);
