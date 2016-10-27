@@ -21,13 +21,3 @@ $galleryPosition = isset($options['gallery-position'])
     ?>
 </div>
 <?php echo $text; ?>
-<script type="text/javascript">
-    $(function () {
-        $(".thumb").addClass("pic");
-    })
-</script>
-<script type="text/javascript">
-    $(function () {
-        $(".layout-lightbox-gallery").addClass("tiles");
-}   )
-</script>
