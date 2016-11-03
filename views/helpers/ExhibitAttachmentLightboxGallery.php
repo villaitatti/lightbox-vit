@@ -40,27 +40,11 @@ class LightboxGallery_View_Helper_ExhibitAttachmentLightboxGallery extends Zend_
             $html .= '<div class="element-text">' . tag_string($item) . '</div>';
             $html .= '</div>';
             endif;
-          
             //$html .= '<ul style="margin-bottom:30px; margin-top:30px;" class="accordion" data-accordion="myAccordionGroup">';
             //$html .= '<li class="accordion-navigation">';
             //$html .= '<a href="#panel1a"><b style="color: #de171c">ITEM DATA</b></a>';
             //$html .= '<div id="panel1a" class="content">';
             $html .= '<div>';
-            $box_number = metadata($item, array('Item Type Metadata', 'Box Number'));
-            if ($box_number):;
-            $html .= '<h6 class="accordion-item-titles">Box Number</h6>';
-            $html .= '<p>' . $box_number . '</p>';
-            endif;
-            $folder_number = metadata($item, array('Item Type Metadata', 'Folder Number'));
-            if ($folder_number):;
-            $html .= '<h6 class="accordion-item-titles">Folder Number</h6>';
-            $html .= '<p>' . $folder_number . '</p>';
-            endif;
-            $image_number = metadata($item, array('Item Type Metadata', 'Image Number'));
-            if ($image_number):;
-            $html .= '<h6 class="accordion-item-titles">Image Number</h6>';
-            $html .= '<p>' . $image_number . '</p>';
-            endif;
             $folder_title = metadata($item, array('Item Type Metadata', 'Folder Title'));
             if ($folder_title):;
             $html .= '<h6 class="accordion-item-titles">Folder Title</h6>';
@@ -91,6 +75,13 @@ class LightboxGallery_View_Helper_ExhibitAttachmentLightboxGallery extends Zend_
             $html .= '<h6 class="accordion-item-titles">Physical Dimension</h6>';
             $html .= '<p>' . $physical_dimensions . '</p>';
             endif;
+            $item_link = metadata($item, array('Dublin Core', 'Identifier'));
+            if ($item_link):
+            $html .= '<h6 class="accordion-item-titles">Identifier</h6>';
+            $html .= '<p>' . $item_link . '</p>';
+            endif;
+            
+            //$html .= '<h6><a style="z-index:999;" href="/item/'.$item_link.'">View item details</a></h6>';
             
             
             
