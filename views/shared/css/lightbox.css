@@ -54,15 +54,15 @@ height: 100%;
 }
 .lb-image-container {
     position: absolute;
-    width: 55%;
+    width: 54%;
     height: 100%;
     margin-top: -4px;
-    margin-left: -4px;
+    margin-left: 1rem;
 }
 
 .lb-outerContainer {
   position: absolute;
-  background-color: white;
+  background-color: #f0f0f0;
   *zoom: 1;
   width: 90% !important;
   left: 5%;
